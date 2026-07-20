@@ -14,6 +14,7 @@ jobs:
           node-version: 22
           cache: 'npm'
       - run: npm install
+      - run: npm run lint
       - run: npm test
       - name: Docker login
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
